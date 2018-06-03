@@ -12,16 +12,16 @@ import os
 
 
 # This saves every csv file (in specific folder) into a seperate worksheet in the same xls file (saved in same folder)
-excel_writer = pd.ExcelWriter(r"C:\Users\pri.naicker.JAKE\Desktop\Peptide_concatenated.xlsx")
+excel_writer = pd.ExcelWriter(r"PATH")
 
-for filename in glob.glob(r"C:\Users\pri.naicker.JAKE\Desktop\WT Dimer\*"):
+for filename in glob.glob(r"PATH*"):
     wb = xlwt.Workbook()
     (f_path, f_name) = os.path.split(filename)
 
     print(f_path)
-    print(r"C:\Users\pri.naicker.JAKE\Desktop\WT Dimer\%s\*.csv"%f_name) 
+    print(r"PATH*.csv"%f_name) 
 
-    for filename_2 in glob.glob(r"C:\Users\pri.naicker.JAKE\Desktop\WT Dimer\%s\*.csv"%f_name):
+    for filename_2 in glob.glob(r"PATH"%f_name):
         (f_path_2, f_name_2) = os.path.split(filename_2)
 
         print(f_path_2)
